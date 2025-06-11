@@ -1,0 +1,21 @@
+* {
+	font-family: 'Jersey 15';
+	font-size: 27px;
+	color:#fff;
+	padding-left: 2px;
+}
+
+/* For the forest theme */
+
+window#waybar {
+	background: rgba(38, 148, 62,0.50);
+	border-radius: 15px;
+	border: 2px solid rgba(38, 148, 62,0.90);
+}
+
+#network {
+	background-color: rgba(38, 148, 62,1);
+	border-radius: 15px;
+	padding-left:5px;
+	padding-right:5px;
+}

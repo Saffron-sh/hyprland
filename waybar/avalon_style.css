@@ -1,0 +1,14 @@
+* {
+	font-family: 'Jersey 15';
+	font-size: 27px;
+	color:#fff;
+	padding-left: 2px;
+}
+
+/* For the avalon planet theme theme */
+
+window#waybar {
+	background: rgba(61, 25, 25,0.50);
+	border-radius: 15px;
+	border: 2px solid rgba(120, 112, 110,0.90);
+}

@@ -1,0 +1,15 @@
+* {
+	font-family: 'Jersey 15';
+	font-size: 27px;
+	color:#fff;
+	padding-left: 2px;
+}
+
+/* For the Subway theme */
+
+window#waybar {
+	background: rgba(45,121,145,0.50);
+	border-radius: 15px;
+	border: 2px solid rgba(9, 176, 237,0.90);
+}
+

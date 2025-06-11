@@ -1,0 +1,13 @@
+* {
+	font-family: 'Jersey 15';
+	font-size: 22px;
+	color:rgba(113, 121, 126, 1);
+	padding-left: 2px;
+}
+
+/* For the hitman theme */
+
+window#waybar {
+	background: rgba(0,0,0,0);
+}
+

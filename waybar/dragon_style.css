@@ -1,0 +1,12 @@
+* {
+	font-family: 'Jersey 15';
+	font-size: 22px;
+	color:rgba(124, 8, 194,1);
+	padding-left: 2px;
+}
+
+/* For the dragon  theme */
+
+window#waybar {
+	background: rgba(0,0,0,0);
+}

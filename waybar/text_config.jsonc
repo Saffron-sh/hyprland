@@ -2,29 +2,23 @@
   "height": 15,
   "width": 1350,
   "spacing": 6,
-  "position":"bottom",
   
-  "modules-left":["network","clock"],
-  "modules-center":[""],
-  "modules-right": ["cpu","bluetooth","battery"],
+  "modules-left":["network"],
+  "modules-center":["clock"],
+  "modules-right": ["bluetooth","battery"],
 
 
   "network": {
 	 "interval": 5,
-	 "format-wifi": "{icon}{bandwidthDownBytes}",
-	 "format-ethernet":" {ipaddr}",
-	 "format-disconnected":"󰌺 ",
-	 "format-icons":["󰤯 ","󰤟 ","󰤢 ","󰤥 "," "],
+	 "format-wifi": "Wireless Station {essid} at {bandwidthDownBytes}",
+	 "format-ethernet":" RJ connector on {ipaddr}",
+	 "format-disconnected":" We're down boss",
 	 "tooltip-format":"Interface:{ifname} at {signalStrength}%\nIP:{ipaddr}/{cidr}\nSSID:{essid}\nGateway:{gwaddr}"
   },
 
   "clock":{
-  	"format":"󰇙 {:%H:%M}",
-	"tooltip":"{:%A %b %d | %H:%M}"
-  },
-
-  "cpu":{
-  	"format":" {usage}%"
+  	"format":"{:%A %b %d | %H:%M}",
+	"tooltip":false
   },
 
   "bluetooth":{
@@ -39,10 +33,9 @@
 
   "battery": {
   	"interval": 5,
-	"format": "{icon} {capacity}% ",
-	"format-charging": "󰚥 {capacity}% ",
+	"format": "Battery at {capacity}% ",
+	"format-charging": "Charging at {capacity}% ",
   	"format-plugged": "Using AC  ",
-	"format-icons": [" ", " ", " ", " ", " "],
 	"tooltip-format-charging":"We got {time}\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain",
   	"tooltip-format-plugged":"Techincally we got eternity\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain",
   	"tooltip-format-discharging":"We got {time}\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain"

@@ -1,11 +1,13 @@
 #For quick access to places
 
+alias to="cd"
 alias topy="cd $HOME/Documents/lang/py"
-alias toc="cd $HOME/Documents/lang/C"
+alias toc="cd $HOME/Documents/lang/"
 alias toneb="cd $HOME/Documents/nebula/neb_things"
 alias togit="cd $HOME/Documents/misc/git_pushes"
 alias toscr="cd $HOME/.scripts"
 alias topj="cd $HOME/Documents/.projects"
+alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"

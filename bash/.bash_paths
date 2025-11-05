@@ -4,4 +4,5 @@ export topy="$HOME/Documents/lang/py"
 export togit="$HOME/Documents/misc/git_pushes"
 export topj="$HOME/Documents/.projects"
 export toscr="$HOME/.scripts"
+export toaur="$HOME/Documents/misc/aur_pkgs"
 

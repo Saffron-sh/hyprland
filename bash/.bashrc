@@ -26,6 +26,10 @@ if  [[ -f ~/.bash_paths ]]; then
 	. ~/.bash_paths
 fi
 
-#Alerting me if Catbox if offile
 
+#Personal Scripts:
+
+#Alerting me if Catbox if offile
 $HOME/.scripts/bash/offline_alert.sh
+#The TO-DO list:
+$HOME/.scripts/bash/to_do_list.sh

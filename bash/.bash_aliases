@@ -8,6 +8,7 @@ alias togit="cd $HOME/Documents/misc/git_pushes"
 alias toscr="cd $HOME/.scripts"
 alias topj="cd $HOME/Documents/.projects"
 alias toaur="cd $HOME/Documents/misc/aur_pkgs"
+alias tosilo="cd $HOME/.silo"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"

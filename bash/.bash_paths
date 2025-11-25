@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export silo="$HOME/.silo/"
 export toc="$HOME/Documents/lang/"
 export topy="$HOME/Documents/lang/py"

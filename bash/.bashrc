@@ -1,6 +1,8 @@
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+FPEN="Parker_standard_metallic"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

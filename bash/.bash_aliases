@@ -19,11 +19,20 @@ alias firelong="$HOME/.scripts/python/firelong.py"
 alias m2m="$HOME/.scripts/bash/m2m.sh"
 alias nethole="$HOME/.scripts/bash/nethole.sh"
 alias vi="vim"
+alias djdown='yt-dlp -x \
+  --audio-format flac \
+  --audio-quality 0 \
+  --embed-metadata \
+  --embed-thumbnail \
+  --no-write-thumbnail \
+  --parse-metadata "title:%(title)s" \
+  --parse-metadata "artist:%(channel)s" \
+  -o "%(title)s.%(ext)s" '
 alias termusic="termusic --backend mpv"
 alias pahed="~/Desktop/git_clones/animepahe-cli/build/animepahe-cli-beta"
 
 #Others
-alias lspower="fastfetch | grep BAT | cut -d ' ' -f3-"
+alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"
 alias ping_host="ping $(ip route | grep default | cut -d ' ' -f3)"
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
 alias blueup="sudo systemctl start bluetooth;bluetoothctl scan on;bluetoothctl"

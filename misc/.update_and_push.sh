@@ -2,7 +2,7 @@
 
 norm="\033[0;0m"
 red="\033[0;31m"
-
+blue="\033[0;34m"
 to_update=$1
 
 if [[ $# -ne 1 ]];then
@@ -19,6 +19,19 @@ update_CTFs(){
 	git commit -m "$message"
 	git push -u origin master
 	cd ..
+}
+
+update_lang(){
+    cd ./lang/
+    echo -e "$blue Updating the lang/bash directory$norm"
+    rsync -avh $HOME/.scripts/bash/ $HOME/Documents/lang/bash/
+    rsync -avh $HOME/Documents/lang/ .
+    git add .
+    echo "Enter your commit:"
+    read message
+    git commit -m "$message"
+    git push -u origin master
+    cd ..
 }
 
 update_firelong(){

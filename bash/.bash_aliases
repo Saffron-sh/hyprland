@@ -1,6 +1,8 @@
 #For quick access to places
 
 alias sl="ls"
+alias LS="ls"
+alias SL="ls"
 alias to="cd"
 alias topy="cd $HOME/Documents/lang/py"
 alias toc="cd $HOME/Documents/lang/"
@@ -11,7 +13,8 @@ alias topj="cd $HOME/Documents/.projects"
 alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 alias tosilo="cd $HOME/.silo"
 alias toasg="cd $HOME/Documents/assignments"
-alias towork="cd $HOME/Desktop/work/redynox"
+alias towork="cd $HOME/Desktop/work"
+alias cslab="cd $HOME/Documents/lang/cpp/dsc/sem_2"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"
@@ -31,6 +34,9 @@ alias djdown='yt-dlp -x \
 alias termusic="termusic --backend mpv"
 alias pahed="~/Desktop/git_clones/animepahe-cli/build/animepahe-cli-beta"
 
+#Starting things
+alias hx="start-hyprland"
+
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"
 alias ping_host="ping $(ip route | grep default | cut -d ' ' -f3)"
@@ -39,3 +45,4 @@ alias blueup="sudo systemctl start bluetooth;bluetoothctl scan on;bluetoothctl"
 alias bluedash="bluetoothctl disconnect;sudo systemctl stop bluetooth"
 alias wiup="iwctl station wlan0 scan;sleep 1;iwctl station wlan0 connect myPoco;sleep 1;iw dev"
 alias widash="iwctl station wlan0 disconnect;iw dev"
+alias tt="kitten icat $HOME/Pictures/misc_pictures/time_table.png"

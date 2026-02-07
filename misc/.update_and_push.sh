@@ -24,8 +24,8 @@ update_CTFs(){
 update_lang(){
     cd ./lang/
     echo -e "$blue Updating the lang/bash directory$norm"
-    rsync -avh $HOME/.scripts/bash/ $HOME/Documents/lang/bash/
-    rsync -avh $HOME/Documents/lang/ .
+    cp -rvv $HOME/.scripts/bash/ $HOME/Documents/lang/bash/
+    cp -rvv $HOME/Documents/lang/ .
     git add .
     echo "Enter your commit:"
     read message

@@ -1,7 +1,7 @@
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.utf8
+export LC_CTYPE=en_US.utf8   
 
-FPEN="Parker_standard_metallic"
+FPEN="Parker_vector_metallic"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

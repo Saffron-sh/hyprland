@@ -3,6 +3,9 @@
 alias sl="ls"
 alias LS="ls"
 alias SL="ls"
+alias CD="cd"
+alias clera="clear"
+alias CLEAR="clear"
 alias to="cd"
 alias topy="cd $HOME/Documents/lang/py"
 alias toc="cd $HOME/Documents/lang/"
@@ -13,8 +16,8 @@ alias topj="cd $HOME/Documents/.projects"
 alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 alias tosilo="cd $HOME/.silo"
 alias toasg="cd $HOME/Documents/assignments"
-alias towork="cd $HOME/Desktop/work"
-alias cslab="cd $HOME/Documents/lang/cpp/dsc/sem_2"
+alias towork="cd $HOME/Desktop/.work"
+alias tobj="cd $HOME/Documents/.personal/finance"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"
@@ -22,20 +25,12 @@ alias firelong="$HOME/.scripts/python/firelong.py"
 alias m2m="$HOME/.scripts/bash/m2m.sh"
 alias nethole="$HOME/.scripts/bash/nethole.sh"
 alias vi="vim"
-alias djdown='yt-dlp -x \
-  --audio-format flac \
-  --audio-quality 0 \
-  --embed-metadata \
-  --embed-thumbnail \
-  --no-write-thumbnail \
-  --parse-metadata "title:%(title)s" \
-  --parse-metadata "artist:%(channel)s" \
-  -o "%(title)s.%(ext)s" '
 alias termusic="termusic --backend mpv"
 alias pahed="~/Desktop/git_clones/animepahe-cli/build/animepahe-cli-beta"
 
 #Starting things
 alias hx="start-hyprland"
+alias dates="firefox $HOME/Documents/misc/testas_dates.pdf"
 
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"
@@ -46,3 +41,5 @@ alias bluedash="bluetoothctl disconnect;sudo systemctl stop bluetooth"
 alias wiup="iwctl station wlan0 scan;sleep 1;iwctl station wlan0 connect myPoco;sleep 1;iw dev"
 alias widash="iwctl station wlan0 disconnect;iw dev"
 alias tt="kitten icat $HOME/Pictures/misc_pictures/time_table.png"
+alias smatrix="cmatrix -s | lolcat"
+alias budget="cat $HOME/Documents/.personal/finance/ledger_feb.json"

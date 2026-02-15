@@ -17,7 +17,6 @@ alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 alias tosilo="cd $HOME/.silo"
 alias toasg="cd $HOME/Documents/assignments"
 alias towork="cd $HOME/Desktop/.work"
-alias tobj="cd $HOME/Documents/.personal/finance"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"
@@ -27,6 +26,8 @@ alias nethole="$HOME/.scripts/bash/nethole.sh"
 alias vi="vim"
 alias termusic="termusic --backend mpv"
 alias pahed="~/Desktop/git_clones/animepahe-cli/build/animepahe-cli-beta"
+alias onvideo="$HOME/.scripts/bash/video_wall.sh"
+alias gtop="amdgpu_top"
 
 #Starting things
 alias hx="start-hyprland"

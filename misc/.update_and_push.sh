@@ -49,7 +49,8 @@ update_hyprland(){
 	cd ./hyprland/
 	rsync -avh $HOME/.config/hypr/ ./hypr/
 	rsync -avh $HOME/.config/waybar/ ./waybar/
-	rsync -avh $HOME/Pictures/forwall/ ./wallpapers/
+	rsync -avh $HOME/Pictures/forwall/ ./wallpapers/images/
+    rsync -avh $HOME/Videos/forwall ./wallpapers/videos/
 	rsync -avh $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_paths $HOME/.vimrc ./bash/
     rsync -avh $HOME/Documents/misc/git_pushes/.update_and_push.sh ./misc/
 	git add .

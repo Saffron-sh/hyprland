@@ -1,4 +1,3 @@
-[!]Exam form
 [!]PRO Ultimate Gym Follow up
 []RULES
 [*]Set up virtualization

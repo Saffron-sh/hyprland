@@ -32,7 +32,7 @@ fi
 #Personal Scripts:
 
 #functions:
-sgc(){
+dsgc(){
 	for csource in "$@";do
 		executable="${csource%.*}"
 		gcc "$csource" -o "$executable"
@@ -49,4 +49,7 @@ sgp(){
 #Alerting me if Catbox if offile
 [[ -f $HOME/.scripts/bash/offline_alert.sh ]] && $HOME/.scripts/bash/offline_alert.sh
 #The TO-DO list:
-[[ -f $HOME/.scripts/bash/to_do_list.sh ]] && $HOME/.scripts/bash/to_do_list.sh
+[[ -f $HOME/.scripts/bash/pull_todo_from_git.sh ]] && $HOME/.scripts/bash/pull_todo_from_git.sh
+
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools

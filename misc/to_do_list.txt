@@ -1,5 +1,4 @@
 [*]Set up virtualization
-[]RULES
 []Yt 18 may
 []Two VMs communicating
 []Basic Wireshark packet capture

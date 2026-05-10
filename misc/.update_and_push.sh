@@ -12,7 +12,7 @@ fi
 
 update_CTFs(){
 	cd ./CTFs/
-	rsync -avh $HOME/Documents/.projects/ctf/DSCDU_001 .
+	rsync -avh $HOME/Documents/.projects/ctf/ .
 	git add .
 	echo "Enter your commit:"
 	read message
@@ -24,7 +24,7 @@ update_CTFs(){
 update_lang(){
     cd ./lang/
     echo -e "$blue Updating the lang/bash directory$norm"
-    cp -rvv $HOME/.scripts/bash/ $HOME/Documents/lang/bash/
+    cp -rvv $HOME/.scripts/bash/*.sh $HOME/Documents/lang/bash/daily_scripts/
     cp -rvv $HOME/Documents/lang/ .
     git add .
     echo "Enter your commit:"

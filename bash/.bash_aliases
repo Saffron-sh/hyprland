@@ -1,11 +1,14 @@
 #For quick access to places
 
+alias l="ls"
 alias sl="ls"
 alias LS="ls"
 alias SL="ls"
 alias CD="cd"
 alias clera="clear"
 alias CLEAR="clear"
+alias lsblkk="lsblk"
+alias lsbkl="lsblk"
 alias to="cd"
 alias topy="cd $HOME/Documents/lang/py"
 alias tolang="cd $HOME/Documents/lang/"
@@ -17,6 +20,8 @@ alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 alias tosilo="cd $HOME/.silo"
 alias toasg="cd $HOME/Documents/assignments"
 alias towork="cd $HOME/Desktop/.work"
+alias tocl="cd $HOME/Desktop/.work/saffron_digital/clients"
+alias toedit="cd $HOME/Videos/editing"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"
@@ -31,7 +36,7 @@ alias gtop="amdgpu_top"
 
 #Starting things
 alias hx="start-hyprland"
-alias dates="firefox $HOME/Documents/misc/testas_dates.pdf"
+alias powerpm="$HOME/.scripts/bash/power_pm.sh"
 
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"
@@ -43,4 +48,4 @@ alias wiup="iwctl station wlan0 scan;sleep 1;iwctl station wlan0 connect myPoco;
 alias widash="iwctl station wlan0 disconnect;iw dev"
 alias tt="kitten icat $HOME/Pictures/misc_pictures/time_table.png"
 alias smatrix="cmatrix -sr"
-alias whyami="echo -e 'TF DO YOU MEAN WHY YOU ARE?'"
+alias whyami="echo -e 'hack'"

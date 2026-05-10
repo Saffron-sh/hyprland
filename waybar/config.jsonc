@@ -31,7 +31,7 @@
 	"format-off":"",
 	"format-no-controller":"",
 	"interval": 5,
-	"format-on":"BT on standby | ",
+	"format-on":"| BT on standby | ",
 	"format-connected":"BT | ",
 	"tooltip-format-connected":"BT with {device_alias}\nMAC: {device_address}",
 	"format-connected-battery":"| BT at {device_battery_percentage}% |"

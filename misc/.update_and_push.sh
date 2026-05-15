@@ -11,8 +11,8 @@ if [[ $# -ne 1 ]];then
 fi
 
 update_CTFs(){
-	cd ./CTFs/
-	rsync -avh $HOME/Documents/.projects/ctf/ .
+	cd ./CTFs/ || exit 1
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Documents/.projects/ctf/ .
 	git add .
 	echo "Enter your commit:"
 	read message
@@ -22,20 +22,20 @@ update_CTFs(){
 }
 
 update_lang(){
-    cd ./lang/
-    echo -e "$blue Updating the lang/bash directory$norm"
-    cp -rvv $HOME/.scripts/bash/*.sh $HOME/Documents/lang/bash/daily_scripts/
-    cp -rvv $HOME/Documents/lang/ .
-    git add .
-    echo "Enter your commit:"
-    read message
-    git commit -m "$message"
-    git push -u origin master
-    cd ..
+	cd ./lang/ || exit 1
+	echo -e "$blue Updating the lang/bash directory$norm"
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/.scripts/bash/ $HOME/Documents/lang/bash/daily_scripts/
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Documents/lang/ .
+	git add .
+	echo "Enter your commit:"
+	read message
+	git commit -m "$message"
+	git push -u origin master
+	cd ..
 }
 
 update_firelong(){
-	cd ./firelong/
+	cd ./firelong/ || exit 1
 	rsync -avh $HOME/.scripts/python/firelong.py .
 	git add .
 	echo "Enter your commit: "
@@ -46,13 +46,15 @@ update_firelong(){
 }
 
 update_hyprland(){
-	cd ./hyprland/
-	rsync -avh $HOME/.config/hypr/ ./hypr/
-	rsync -avh $HOME/.config/waybar/ ./waybar/
-	rsync -avh $HOME/Pictures/forwall/ ./wallpapers/images/
-    rsync -avh $HOME/Videos/forwall ./wallpapers/videos/
-	rsync -avh $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_paths $HOME/.vimrc ./bash/
-    rsync -avh $HOME/Documents/misc/git_pushes/.update_and_push.sh ./misc/
+	cd ./hyprland/ || exit 1
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/.config/hypr/ ./hypr/
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/.config/waybar/ ./waybar/
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Pictures/forwall/ ./wallpapers/images/
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Videos/forwall/ ./wallpapers/videos/
+	mkdir -p /tmp/dotfiles_stage
+	cp $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_paths $HOME/.vimrc /tmp/dotfiles_stage/
+	rsync -avh --delete /tmp/dotfiles_stage/ ./bash/
+	rsync -avh $HOME/Documents/misc/git_pushes/.update_and_push.sh ./misc/
 	git add .
 	echo "Enter your commit: "
 	read message
@@ -62,7 +64,7 @@ update_hyprland(){
 }
 
 update_m2m(){
-	cd ./m2m/
+	cd ./m2m/ || exit 1
 	rsync -avh $HOME/.scripts/bash/m2m.sh .
 	git add .
 	echo "Enter your commit: "
@@ -73,9 +75,9 @@ update_m2m(){
 }
 
 update_nebula(){
-	cd ./nebula/
-	rsync -avh $HOME/Documents/nebula/neb_things ./neb_things
-	rsync -avh $HOME/Documents/nebula/neb_data ./neb_data
+	cd ./nebula/ || exit 1
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Documents/nebula/neb_things/ ./neb_things/
+	rsync -avh --delete --exclude='.git' --exclude='.gitignore' --exclude='LICENSE' $HOME/Documents/nebula/neb_data/ ./neb_data/
 	git add .
 	echo "Enter your commit: "
 	read message
@@ -85,7 +87,7 @@ update_nebula(){
 }
 
 update_nethole(){
-	cd ./nethole/
+	cd ./nethole/ || exit 1
 	rsync -avh $HOME/.scripts/bash/nethole.sh .
 	git add .
 	echo "Enter your commit: "
@@ -96,4 +98,3 @@ update_nethole(){
 }
 
 update_$to_update
-

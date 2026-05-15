@@ -20,7 +20,7 @@ alias toaur="cd $HOME/Documents/misc/aur_pkgs"
 alias tosilo="cd $HOME/.silo"
 alias toasg="cd $HOME/Documents/assignments"
 alias towork="cd $HOME/Desktop/.work"
-alias tocl="cd $HOME/Desktop/.work/saffron_digital/clients"
+alias tocl="cd $HOME/Desktop/.work/saffron_digital/Websites/clients"
 alias toedit="cd $HOME/Videos/editing"
 
 #Binaries
@@ -37,6 +37,7 @@ alias gtop="amdgpu_top"
 #Starting things
 alias hx="start-hyprland"
 alias powerpm="$HOME/.scripts/bash/power_pm.sh"
+alias todo="$HOME/.scripts/bash/todo.sh"
 
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"

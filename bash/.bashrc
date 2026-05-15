@@ -46,10 +46,12 @@ sgp(){
 	done	
 }
 
+
+#Commented out for losing relevance
 #Alerting me if Catbox if offile
-[[ -f $HOME/.scripts/bash/offline_alert.sh ]] && $HOME/.scripts/bash/offline_alert.sh
+#[[ -f $HOME/.scripts/bash/offline_alert.sh ]] && $HOME/.scripts/bash/offline_alert.sh
 #The TO-DO list:
-[[ -f $HOME/.scripts/bash/pull_todo_from_git.sh ]] && $HOME/.scripts/bash/pull_todo_from_git.sh
+#[[ -f $HOME/.scripts/bash/pull_todo_from_git.sh ]] && $HOME/.scripts/bash/pull_todo_from_git.sh
 
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools

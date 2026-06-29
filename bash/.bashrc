@@ -2,7 +2,7 @@ export LANG=en_US.utf8
 export LC_CTYPE=en_US.utf8   
 
 FPEN="Parker_vector_metallic"
-Total_Outstading="160238/- as of June 29, 2026"
+Total_Outstading="160610/- as of June 29, 2026"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

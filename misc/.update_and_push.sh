@@ -55,7 +55,8 @@ update_hyprland(){
 	cp $HOME/.bashrc $HOME/.bash_aliases $HOME/.bash_paths $HOME/.vimrc /tmp/dotfiles_stage/
 	rsync -avh --delete /tmp/dotfiles_stage/ ./bash/
 	rsync -avh $HOME/Documents/misc/git_pushes/.update_and_push.sh ./misc/
-	git add .
+	rsync -avh --delete /etc/fstab ./misc/
+    git add .
 	echo "Enter your commit: "
 	read message
 	git commit -m "$message"

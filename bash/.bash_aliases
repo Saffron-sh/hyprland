@@ -51,3 +51,6 @@ alias tt="kitten icat $HOME/Pictures/misc_pictures/time_table.png"
 alias smatrix="cmatrix -sr"
 alias whyami="echo -e 'hack'"
 alias whereami=pwd
+alias whoareu="uname -r"
+alias whatareu="echo -e 'mothership'"
+alias whyareu="echo -e 'hack'"

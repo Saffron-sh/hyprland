@@ -22,14 +22,3 @@ UUID=7CF7-3E54	/home/usernorm/.silo/thumb/hp_64	exfat	defaults,nofail,noatime,ui
 
 # Multi Purpose SandDisk Luxe (256gb)
 UUID=7B5F-FF89  /home/usernorm/.silo/thumb/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0
-
-###############Deprecated/Lost/Decommissioned)###########################
-
-# Medium San-disk memory card (64gb) (accidently shipped away with the poco c3)
-#UUID=3484-C4FC	/home/usernorm/.silo/card/medium	vfat	defaults,nofail,errors=remount-ro,uid=1000,gid=1000,umask=022	0 0
-
-# Small memory card (4gb) (deprecated, out of use)
-#UUID=4987-19EF /home/usernorm/.silo/card/small	vfat	defaults,nofail,errors=remount-ro,uid=1000,gid=1000,umask=022	0 0 
-
-# Small thumb drive (WITH VENTOY) Edenic (16gb) (on living room TV permanently, ventoy removed)
-#UUID=35E4-2749	/home/usernorm/.silo/thumb/small	exfat	defaults,nofail,errors=remount-ro,uid=1000,gid=1000,umask=022	0 0

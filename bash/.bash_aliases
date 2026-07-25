@@ -38,6 +38,8 @@ alias gtop="amdgpu_top"
 alias hx="start-hyprland"
 alias powerpm="$HOME/.scripts/bash/power_pm.sh"
 alias todo="$HOME/.scripts/bash/todo.sh"
+alias lab="$HOME/.scripts/hyprland_startup/thm_lab_start.sh"
+alias rwaybar="killall waybar && waybar &"
 
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"

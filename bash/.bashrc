@@ -1,6 +1,3 @@
-export LANG=en_US.utf8
-export LC_CTYPE=en_US.utf8   
-
 FPEN="Parker_vector_metallic"
 Total_Outstading="160610/- as of June 29, 2026"
 
@@ -10,12 +7,6 @@ Total_Outstading="160610/- as of June 29, 2026"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 #Bash aliases in one file
 
@@ -48,11 +39,3 @@ sgp(){
 }
 
 
-#Commented out for losing relevance
-#Alerting me if Catbox if offile
-#[[ -f $HOME/.scripts/bash/offline_alert.sh ]] && $HOME/.scripts/bash/offline_alert.sh
-#The TO-DO list:
-#[[ -f $HOME/.scripts/bash/pull_todo_from_git.sh ]] && $HOME/.scripts/bash/pull_todo_from_git.sh
-
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools

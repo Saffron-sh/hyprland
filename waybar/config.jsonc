@@ -1,52 +1,61 @@
 {
-  "height": 15,
-  "width": 1350,
+  "height": "",
+  "width": "",
   "spacing": 6,
   "position":"bottom",
   
   "modules-left":["network","clock"],
-  "modules-center":[""],
-  "modules-right": ["cpu","bluetooth","battery"],
-
+  "modules-center":["hyprland/workspaces"],
+  "modules-right":["pulseaudio","cpu","bluetooth","battery"],
 
   "network": {
 	 "interval": 5,
 	 "format-wifi": "{icon}{bandwidthDownBytes}",
-	 "format-ethernet":" {ipaddr}",
+	 "format-ethernet":" {ipaddr} |  {bandwidthDownBytes}",
 	 "format-disconnected":"󰌺 ",
 	 "format-icons":["󰤯 ","󰤟 ","󰤢 ","󰤥 "," "],
 	 "tooltip-format":"Interface:{ifname} at {signalStrength}%\nIP:{ipaddr}/{cidr}\nSSID:{essid}\nGateway:{gwaddr}"
   },
 
   "clock":{
-  	"format":"󰇙 {:%H:%M}",
+  	"format":"| {:%H:%M}",
 	"tooltip-format":"{:%c}"
+  },
+    
+  "pulseaudio": {
+	"format": "{icon} {volume}%",
+	"format-bluetooth": " {volume}%",
+	"format-muted": "󰖁 ",
+	"format-icons": ["󰖁 ","󰖀 ","󰕾 "],
+	"scroll-step": 1,
+	"on-click": "pavucontrol"
   },
 
   "cpu":{
-  	"format":" {usage}%"
+  	"format":"|   {usage}%",
+    "onclick":"btop"
   },
 
   "bluetooth":{
 	"format-off":"",
 	"format-no-controller":"",
 	"interval": 5,
-	"format-on":"| BT on standby | ",
-	"format-connected":"BT | ",
+	"format-on":"| BT on standby  ",
+	"format-connected":"BT  ",
 	"tooltip-format-connected":"BT with {device_alias}\nMAC: {device_address}",
-	"format-connected-battery":"| BT at {device_battery_percentage}% |"
+	"format-connected-battery":"| BT at {device_battery_percentage}% "
   },
 
   "battery": {
   	"interval": 5,
-	"format": "{icon} {capacity}% ",
-	"format-charging": "󰚥 {capacity}% ",
+	"format": "|  {icon} {capacity}% ",
+	"format-charging": "|  󰚥 {capacity}% ",
   	"format-plugged": "Using AC  ",
 	"format-icons": [" ", " ", " ", " ", " "],
+    "onclick":"ip a",
 	"tooltip-format-charging":"We got {time}\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain",
   	"tooltip-format-plugged":"Techincally we got eternity\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain",
   	"tooltip-format-discharging":"We got {time}\nBattery health at {health}\nWe got {power} watts\nShe's been through {cycles} captain"
   }
-
 
 }

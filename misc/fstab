@@ -2,23 +2,11 @@
 # See fstab(5) for details.
 
 # <file system> <dir> <type> <options> <dump> <pass>
-# /dev/sda2 (root sector)
-UUID=80fd0d53-8d76-4aab-bd8a-6d671f475730	/         	ext4      	rw,relatime	0 1
+# /dev/sda2
+UUID=8c025399-abc1-4e61-98db-2e0a7fd3a7e4	/         	ext4      	rw,relatime	0 1
 
-# /dev/sda1 (boot sector)
-UUID=F536-C480      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
-
-# RedCop memory card  (64gb)
-UUID=ce3fe7fb-b640-46ae-9bd1-82bbdb69fff9	/home/usernorm/.silo/card/redcop	ext4	defaults,nofail,errors=remount-ro	0 0 
-
-# Medium thumb drive SanDisk (32gb)
-UUID=6716-DBD2	/home/usernorm/.silo/thumb/sandisk_32	vfat	defaults,nofail,errors=remount-ro,uid=1000,gid=1000,umask=022 0 0 
-
-# Cybersec Roadmap thumb drive Edenic (64gb)
-UUID=abd89926-fc5e-40cf-926d-bd401316ef63	/home/usernorm/Desktop/.work/cybersec	ext4	defaults,nofail,errors=remount-ro	0 0
-
-# Compatible HP thumb drive (64gb)
-UUID=7CF7-3E54	/home/usernorm/.silo/thumb/hp_64	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
+# /dev/sda1
+UUID=5F88-4430      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # Multi Purpose SandDisk Luxe (256gb)
-UUID=7B5F-FF89  /home/usernorm/.silo/thumb/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0
+UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0

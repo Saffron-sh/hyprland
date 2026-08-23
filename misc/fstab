@@ -10,3 +10,6 @@ UUID=5F88-4430      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,cod
 
 # Multi Purpose SandDisk Luxe (256gb)
 UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0
+
+# Cargo Bay (NVME 512GB SAMSUNG)
+UUID=43647eb1-e266-4db9-a224-28e4c41d0e24	/home/saffron/.silo/storage_bay 	ext4	defaults,noatime	0 2

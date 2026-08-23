@@ -1,12 +1,1 @@
-* {
-	font-family: 'Jersey 15';
-	font-size: 20px;
-	color:#fff;
-	padding-left: 2px;
-}
-
-/* For the tux theme */
-
-window#waybar {
-	background: rgba(0,0,0,0);
-}
+/home/saffron/.config/waybar/steel-scale_style.css

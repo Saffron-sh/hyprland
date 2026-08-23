@@ -131,6 +131,7 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ workspace = "-1" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ workspace = "+1" }))
 
 -- Offbeat Ivy additional mouse buttons
+hl.bind(mainMod .. " + mouse:276", hl.dsp.exec_cmd("kitty"))
 hl.bind("mouse:275", hl.dsp.focus({ workspace = "-1" }))
 hl.bind("mouse:276", hl.dsp.focus({ workspace = "+1" }))
 hl.bind("SHIFT + mouse:275", hl.dsp.window.move({ workspace = "-1" }))

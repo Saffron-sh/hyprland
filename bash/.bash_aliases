@@ -22,6 +22,7 @@ alias toasg="cd $HOME/Documents/assignments"
 alias towork="cd $HOME/Desktop/.work"
 alias tocl="cd $HOME/Desktop/.work/saffron_digital/Websites/clients"
 alias toedit="cd $HOME/Videos/editing"
+alias tostore="cd $HOME/.silo/storage_bay"
 
 #Binaries
 alias fdown="aria2c -s 16 -x 16"
@@ -56,3 +57,4 @@ alias whereami=pwd
 alias whoareu="uname -r"
 alias whatareu="echo -e 'mothership'"
 alias whyareu="echo -e 'hack'"
+alias lsblk="lsblk -o NAME,SIZE,TRAN,FSAVAIL,FSUSE%,LABEL"

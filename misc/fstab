@@ -14,11 +14,11 @@ UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=100
 # Edenic 64 GB Thumb Drive
 UUID=FF9E-F5E6	/home/saffron/.silo/others/edenic	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
+UUID=7EDF-7A22	/home/saffron/.silo/others/curzer_blade	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
+
 # Micro SD with adapter 64GB
 UUID=EA93-E894	/home/saffron/.silo/others/microsd	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
 # Cargo Bay (NVME 512GB SAMSUNG)
 UUID=10091672-e899-4cb2-9eae-e875a79729de	/home/saffron/.silo/storage_bay 	ext4	defaults,noatime	0 2
 
-# The SWAP cuz we're running a lil low on RAM rn
-#/home/saffron/.silo/storage_bay/swapfile none swap sw 0 0

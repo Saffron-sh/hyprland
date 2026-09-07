@@ -14,6 +14,7 @@ UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=100
 # Edenic 64 GB Thumb Drive
 UUID=FF9E-F5E6	/home/saffron/.silo/others/edenic	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
+# SanDisk Curzer Blade 32 GB 
 UUID=7EDF-7A22	/home/saffron/.silo/others/curzer_blade	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
 # Micro SD with adapter 64GB

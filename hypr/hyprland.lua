@@ -131,7 +131,8 @@ hl.bind(mainMod .. " + left", hl.dsp.focus({ workspace = "-1" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ workspace = "+1" }))
 
 -- Offbeat Ivy additional mouse buttons
-hl.bind(mainMod .. " + mouse:276", hl.dsp.exec_cmd("kitty"))
+hl.bind(mainMod .. " + mouse:276", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(mainMod .. " + mouse:275", hl.dsp.exec_cmd("kitty"))
 hl.bind("mouse:275", hl.dsp.focus({ workspace = "-1" }))
 hl.bind("mouse:276", hl.dsp.focus({ workspace = "+1" }))
 hl.bind("SHIFT + mouse:275", hl.dsp.window.move({ workspace = "-1" }))
@@ -197,7 +198,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"), { re
 
 -- App shortcuts
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("wofi --show drun -w 3 -I -G"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 hl.bind("CTRL + grave", hl.dsp.exec_cmd("mullvad-browser"))
 hl.bind(mainMod .. " + grave", hl.dsp.exec_cmd("chromium"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("kate"))

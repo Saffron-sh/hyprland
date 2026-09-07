@@ -44,6 +44,13 @@ generic_error(){
 	exit 1
 }
 
+get_user_attention(){
+	for i in 0 1 2 3 4;do
+		printf "seeeee\n"
+		sleep 0.4
+	done
+}
+
 checkroot(){
 	if [[ "$EUID" -ne 0 ]];then
 		print_red "Setup must be run as root"
@@ -183,7 +190,7 @@ generate_fstab(){
 	if genfstab -U /mnt >> /mnt/etc/fstab;then
 		print_green "Table generated"
 		echo "==========FSTAB=========="
-		cat /etc/fstab
+		cat /mnt/etc/fstab
 		echo "==========FSTAB=========="
 
 	else
@@ -197,31 +204,172 @@ chroot(){
 	arch_chroot /mnt
 }
 
-establish_identity(){
+set_time_zone(){
+	ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && hwclock --systohc
 
+}
+set_locale(){
+	sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen 
+	locale-gen
+	echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+}
+
+set_host(){
 	local hostname
-	local username
-
-	#Preparations for doing the stuff
-
+	
+	get_user_attention
 	print_blue "Enter Desired Name for the machine (This will appear in the terminal)"
 	read -rp ">> " hostname
+	
+	printf "%s\n" ${hostname} > /etc/hostname
 
-	print_blue "Enter Desired username (this user will have root privileges)"
+cat > /etc/hosts <<EOF
+127.0.0.1	localhost
+::1		localhost
+127.0.1.1	${hostname}.localdomain		${hostname}
+EOF
+}
+
+set_root_passwd(){
+	get_user_attention
+	print_blue "Enter root passwd"
+	passwd
+}
+
+create_second_user(){
+	local username
+	
+	get_user_attention
+	print_blue "Enter the username of the second user (this user will have root privileges if you modify VISUDO)"
 	read -rp ">> " username
 
-	alias set_time_zone="ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime && hwclock --systohc"
-	
-	alias set_locale="sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen && \ 
-		          locale-gen && \ 
-			  echo 'LANG=en_US.UTF-8' > /etc/locale.conf"
-	
-	alias set_host="echo -r '$hostname' > /etc/hostname"
+	useradd -m -G wheel "$username"
 
-	alias populate_hosts_local_dns="echo -e '127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname.localdomain $hostname > /etc/hosts'"
+	print_blue "Enter password for $username"
+	passwd ${username}
+}
 
-	#Actually doint the stuff
-	
+install_cpu_gpu_packages(){
+	cpu_vendor=$(cat /proc/cpuinfo | grep -Ei 'GenuineIntel|AuthenticAMD')
+	gpu_vendor=$(lspci | grep -Ei 'VGA compatible controller|3D controller|Display controller' | head -n1)
+
+	print_blue "Installing CPU and GPU sepcific packages"
+
+	case "$cpu_vendor" in
+		*GenuineIntel*)
+			print_blue "Intel CPU detected"
+			
+			if pacman -S intel-ucode;then
+				print_green "CPU Packages downloaded"
+			else
+				generic_error
+			fi
+
+			;;
+
+		*AuthenticAMD*)
+			print_blue "AMD CPU detected"
+			
+			if pacman -S amd-ucode;then
+				print_green "CPU Packages downloaded"
+			else
+				generic_error
+			fi
+			;;
+
+		*)
+			print_red "Unknown CPU model. TF are u installing arch on?"
+			exit 1
+			;;
+	esac
+
+	case "$gpu_vendor" in
+		*Intel*)
+			print_blue "Intel graphics detected"
+			
+			if pacman -S mesa vulkan-intel;then
+				print_green "GPU packages downloaded"
+			else
+				generic_error
+			fi
+
+			;;
+
+		*AMD*)
+			print_blue "AMD graphics detected"
+			
+			if pacman -S mesa vulkan-radeon;then
+				print_green "GPU packages downloaded"
+			else
+				generic_error
+			fi
+
+			;;
+
+		*Nvidia*)
+			print_blue "Nvidia graphics detected"
+			
+			if pacman -S nvidia nvidia-utils;then
+				print_green "GPU packages downloaded"
+			else
+				generic_error
+			fi
+
+			;;
+		*)
+			print_red "What exactly are you trying to install arch on?"
+			exit 1
+			;;
+	esac
+
+
+}
+
+setup_network(){
+	print_blue "Installing networkmanager"
+
+	if pacman -S networkmanager iwd;then
+		print_green "Installed"
+	else
+		generic_error
+	fi
+
+cat > /etc/NetworkManager/conf.d/wifi_backend.conf <<EOF
+[device]
+wifi.backend=iwd
+EOF
+}
+
+setup_bootloader(){
+	print_blue "Installing GRUB"
+
+	if pacman -S grub efibootmgr;then
+		print_green "Installed"
+	else
+		generic_error
+	fi
+
+	print_blue "Configuring"
+
+	if grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB && grub-mkconfig -o /boot/grub/grub.cfg;then
+		print_green "Configured Successfully"
+	else
+		generic_error
+	fi
+}
+
+complete_phase_one(){
+	print_blue "Exiting chroot"
+	exit
+	print_blue "Unmounting partitions"
+	umount -R /mnt
+	print_blue "Rebooting now"
+	get_user_attention
+	print_red "REBOOT MANUALLY DUMBASSS"
+}
+
+establish_identity(){
+		
 	print_blue "Setting Time Zone"
 
 	if set_time_zone;then
@@ -235,17 +383,43 @@ establish_identity(){
 	if set_locale;then
 		print_green "Locale successfully configured"
 	else
-		generic error
+		generic_error
 	fi
 
 	print_blue "Setting hostname and localhost dns"
 	
-	if set_host && populate_hosts_local_dns;then
+	if set_host;then
 		print_green "Hostname and dns configured"
 	else
-		generic error
+		generic_error
 	fi
 
+	print_blue "Setting Root password"
+
+	if set_root_passwd;then
+		print_green "root password set"
+	else
+		generic_error
+	fi
+
+	print_blue "Adding Alternate User"
+
+	if create_second_user;then
+		print_green "Added"
+	else
+		generic_error
+	fi
+
+}
+
+setup_phase_one(){
+	install_cpu_gpu_packages
+	
+	setup_network
+	
+	setup_bootloader
+
+	complete_phase_one	
 }
 
 main(){
@@ -266,6 +440,17 @@ main(){
 	askfor_confirmation
 
 	modify_drive "$WORKING_DRIVE"
+
+	install_base
+
+	generate_fstab
+
+	chroot
+
+	establish_identity
+
+	setup_phase_one
+
+	complete_phase_one
 } 
 
-main

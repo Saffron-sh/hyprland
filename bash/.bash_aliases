@@ -41,6 +41,8 @@ alias powerpm="$HOME/.scripts/bash/power_pm.sh"
 alias todo="$HOME/.scripts/bash/todo.sh"
 alias lab="$HOME/.scripts/hyprland_startup/thm_lab_start.sh"
 alias rwaybar="killall waybar && waybar &"
+alias lsblk="$HOME/.scripts/bash/lsblk.sh"
+alias check="$HOME/.scripts/bash/checklist.sh"
 
 #Others
 alias lspwr="fastfetch | grep BAT | cut -d ' ' -f3-"
@@ -57,5 +59,7 @@ alias whereami=pwd
 alias whoareu="uname -r"
 alias whatareu="echo -e 'mothership'"
 alias whyareu="echo -e 'hack'"
-alias lsblk="$HOME/.scripts/bash/lsblk.sh"
 alias lsb="/bin/lsblk -o NAME,FSAVAIL,SIZE,TRAN,FSTYPE,MOUNTPOINT,FSUSE%,LABEL,UUID"
+alias notify_crit="kitten notify --urgency=critical"
+alias notify_norm="kitten notify --urgency=normal"
+alias notify_low="kitten notify --urgency=low"

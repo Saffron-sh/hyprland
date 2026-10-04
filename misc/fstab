@@ -2,11 +2,11 @@
 # See fstab(5) for details.
 
 # <file system> <dir> <type> <options> <dump> <pass>
-# /dev/sda2
-UUID=8c025399-abc1-4e61-98db-2e0a7fd3a7e4	/         	ext4      	rw,relatime	0 1
+# /dev/nvme0n1p2
+UUID=9a08d204-6c23-4364-868a-f146637d63fc	/         	ext4      	rw,relatime	0 1
 
-# /dev/sda1
-UUID=5F88-4430      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+# /dev/nvme0n1p3
+UUID=50E9-0825    	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
 # Multi Purpose SandDisk Luxe (256gb)
 UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0
@@ -15,11 +15,11 @@ UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=100
 UUID=FF9E-F5E6	/home/saffron/.silo/others/edenic	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
 # SanDisk Curzer Blade 32 GB 
-UUID=7EDF-7A22	/home/saffron/.silo/others/curzer_blade	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
+UUID=2339-6AAF	/home/saffron/.silo/others/ventoy	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
 # Micro SD with adapter 64GB
 UUID=EA93-E894	/home/saffron/.silo/others/microsd	exfat	defaults,nofail,noatime,uid=1000,gid=1000,umask=022	0 0
 
 # Cargo Bay (NVME 512GB SAMSUNG)
-UUID=10091672-e899-4cb2-9eae-e875a79729de	/home/saffron/.silo/storage_bay 	ext4	defaults,noatime	0 2
+UUID=8e1b968a-24a0-446c-b725-f30a4fa62cfa	/home/saffron/.silo/storage_bay 	ext4	defaults,noatime	0 2
 

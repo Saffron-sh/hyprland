@@ -222,6 +222,6 @@ hl.bind("F2", hl.dsp.exec_cmd("mixxx"))
 -- hl.bind("F12", hl.dsp.exec_cmd("kitty"))
 
 -- Workspaces (SUPER + 1..7)
-for i = 1, 7 do
+for i = 1, 9 do
     hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
 end

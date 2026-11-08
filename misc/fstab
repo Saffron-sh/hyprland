@@ -8,6 +8,9 @@ UUID=9a08d204-6c23-4364-868a-f146637d63fc	/         	ext4      	rw,relatime	0 1
 # /dev/nvme0n1p3
 UUID=50E9-0825    	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 
+# Swap File
+/swapfile	none	swap	defaults	0 0
+
 # Multi Purpose SandDisk Luxe (256gb)
 UUID=7B5F-FF89  /home/saffron/.silo/luxe  exfat  defaults,nofail,noatime,uid=1000,gid=1000,umask=022  0  0
 

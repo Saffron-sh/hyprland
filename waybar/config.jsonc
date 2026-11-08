@@ -46,7 +46,7 @@
 
   "memory": {
   	"interval": 30,
-	"format":"|   {percentage}%",
+	"format":"| 󰍛 {percentage}%",
     "tooltip-format":"Used {used}GiB / {total}GiB",
 	"max-length": 10
   },
